@@ -1,0 +1,59 @@
+﻿<Window x:Class="CyberSecurityChatbot.ChatbotWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberSecurityChatbot"
+        mc:Ignorable="d"                                  
+        Title="ChatbotWindow" Height="600" Width="500" Background="#301F18" ResizeMode="CanResizeWithGrip">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!--Header and Mood Selector-->
+            <RowDefinition Height="*"/>
+            <!--Chat Area-->
+            <RowDefinition Height="Auto"/>
+            <!--Input Area-->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <!--Save Button-->
+        </Grid.ColumnDefinitions>
+
+        <!--Header-->
+        <TextBlock Grid.Row="0" Text="CyberSecure AI" FontSize="22" Foreground="White" Margin="0,0,10,10" VerticalAlignment="Center"/>
+
+        <!--Mood Selector-->
+        <ComboBox x:Name="MoodSelector" Grid.Row="0" Grid.Column="1" Width="130" Height="30"  Margin="0,0,10,10" VerticalAlignment="Center">
+            <ComboBoxItem Content="Friendly" IsSelected="True"/>
+            <ComboBoxItem Content="Serious"/>
+            <ComboBoxItem Content="Playful"/>
+        </ComboBox>
+
+        <!--Scrallable chat area-->
+        <ScrollViewer x:Name="ChatScrollViewer" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,10" VerticalScrollBarVisibility="Auto" Background="White">
+            <StackPanel x:Name="ChatStack"/>
+        </ScrollViewer>
+
+        <!--Input Field-->
+        <TextBox x:Name="UserInput" Grid.Row="2" Grid.Column="0" FontSize="14" Height="30" Margin="0,0,5,0"/>
+
+        <!--Send Button-->
+        <Button Grid.Row="2" Grid.Column="1" Width="40" Height="30" Click="SendButton_Click" Margin="0,0,5,0">
+            <TextBlock FontSize="20" Text="🤖" HorizontalAlignment="Center"/>
+        </Button>
+
+        <!--mic Button-->
+        <Button Grid.Row="2" Grid.Column="2" Width="40" Height="30" Click="MicButton_Click" Margin="0,0,5,0">
+            <TextBlock FontSize="20" Text="🎙️" HorizontalAlignment="Center"/>
+        </Button>
+
+        <Button Content="🧑‍💼" Background="#D1825F" Foreground="White" Margin="162,5,20,5" Click="ProfileButton_Click"/>
+        <!--Save Button-->
+        <Button Grid.Row="0" Grid.Column="2" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,10,10" Width="70" Click="SaveButton_Click"/>
+    </Grid>
+</Window>

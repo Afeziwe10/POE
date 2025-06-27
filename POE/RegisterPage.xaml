@@ -1,0 +1,60 @@
+﻿<Window x:Class="CyberSecurityChatbot.RegisterPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberSecurityChatbot"
+        mc:Ignorable="d"
+        Title="RegisterPage" Height="500" Width="400" ResizeMode="NoResize">
+    <Border CornerRadius="20" Background="#774D3A" Padding="20" Margin="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Register Form" FontSize="28" FontWeight="Bold" Foreground="#E2B889"
+                       HorizontalAlignment="Center" Margin="0,0,0,20" Grid.Row="0"/>
+
+            <Grid Grid.Row="1" Margin="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="UsernameTextBox" Grid.Row="1" Margin="0,5" Height="35" Padding="10"
+                         Background="#D1825F" Foreground="White" BorderThickness="0"
+                         Text="Username" GotFocus="RemoveText" LostFocus="AddText"/>
+
+                <TextBox x:Name="EmailTextBox" Grid.Row="2" Margin="0,5" Height="35" Padding="10"
+                             Background="#D1825F" Foreground="White" BorderThickness="0" 
+                             Text="Email" GotFocus="RemoveText" LostFocus="AddText"/>
+
+                <PasswordBox x:Name="PasswordBox" Grid.Row="3" Margin="0,5" Height="35" Padding="10"
+                             Background="#D1825F" Foreground="White" BorderThickness="0" PasswordChanged="PasswordBox_PasswordChanged"
+                             GotFocus="HidePasswordPlaceholder" LostFocus="ShowPasswordPlaceholder"/>
+                <TextBlock x:Name="PasswordPlaceholder" Text="Password" Padding="10" Grid.Row="3" Foreground="White" 
+                           IsHitTestVisible="False" VerticalAlignment="Top"/>
+
+                <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="4" Margin="0.5" Height="35" Padding="10"
+                             Background="#D1825F" Foreground="White" BorderThickness="0" PasswordChanged="ConfirmPasswordBox_PasswordChanged"
+                             GotFocus="HideConfirmPasswordPlaceholder" LostFocus="ShowConfirmPasswordPlaceholder"/>
+                <TextBlock x:Name="ConfirmPlaceholder" Text="Confirm Password" Margin="10,0,-10,0" Grid.Row="4" Foreground="White"
+                           IsHitTestVisible="False" VerticalAlignment="Center"/>
+
+                <TextBlock x:Name="StatusMessage" FontSize="12" Foreground="White" Margin="0.5" TextAlignment="Center"/>
+
+                <Button Content="Register" Width="100" Margin="210,49,10,-48" Background="#E2B889" 
+                        Click="Register_Click" Foreground="#301F18" FontWeight="Bold" Grid.Row="4"/>
+
+                <Button Content="Back" Width="100" Margin="10,49,210,-48" Background="#D1825F"
+                        Click="Back_Click" Foreground="White" FontWeight="Bold" Grid.Row="4"/>
+            </Grid>
+        </Grid>
+    </Border>
+
+</Window>

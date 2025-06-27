@@ -1,0 +1,22 @@
+﻿<Window x:Class="CyberSecurityChatbot.LandingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberSecurityChatbot"
+        mc:Ignorable="d"
+        Title="LandingPage" Height="450" Width="350" WindowStartupLocation="CenterScreen" Background="#301F18">
+    <Grid>
+        <Border BorderBrush="#D1825F" BorderThickness="3" CornerRadius="15" Margin="20" Padding="20" Background="#301F18">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+                
+                <Border BorderThickness="3" BorderBrush="#D1825F" CornerRadius="15">
+                    <Image Source="Images/AfezCyberLogo.png" Height="177" Width="174" HorizontalAlignment="Center"/>
+                </Border>
+               
+                <Button Content="Switch to Login" Width="180" Height="40" BorderBrush="#D1825F" Background="#301F18" Foreground="#E2B889" BorderThickness="0" FontWeight="Bold" Margin="0,10,0,0" Click="Login_Click"/>
+              <Button Content="Switch to Register" Width="180" Height="40" BorderBrush="#D1825F"  Background="#301F18" Foreground="#E2B889" BorderThickness="2" FontWeight="Bold" Click="Register_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

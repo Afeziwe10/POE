@@ -1,0 +1,41 @@
+﻿<Window x:Class="CyberSecurityChatbot.RemindersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CyberSecurityChatbot"
+        mc:Ignorable="d"
+        Title="RemindersWindow" Height="400" Width="600" Background="#301F18" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--Header-->
+        <TextBlock Text="Your Reminders" FontSize="22" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+        
+        <!--Reminders List-->
+        <ListView x:Name="RemindersListView" Grid.Row="1" Margin="0,0,0,10"
+                  Background="#E2B889" BorderBrush="Transparent">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="150"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="200"/>
+                    <GridViewColumn Header="Due Date" DisplayMemberBinding="{Binding DueDate}" Width="120"/>
+                    <GridViewColumn Header="Completed" DisplayMemberBinding="{Binding IsCompleted}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <!--Buttons-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Add" Width="75" Margin="0,0,10,0" Click="AddButton_Click" Background="#D1825F" Foreground="White"/>
+            <Button Content="Edit" Width="75" Margin="0,0,10,0" Click="EditButton_Click" Background="#D1825F" Foreground="White"/>
+            <Button Content="Delete" Width="75"  Click="DeleteButton_Click" Background="#D1825F" Foreground="White"/>
+        </StackPanel>
+            
+    </Grid>
+</Window>
